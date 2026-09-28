@@ -352,9 +352,6 @@ export const CssOptimizerPage: React.FC<CssOptimizerPageProps> = ({ wellId: prop
                 {/* Temperature */}
                 <div className="p-3 rounded-xl bg-desert-beige/40 border border-sand-warm/40">
                   <span className="text-[10px] font-mono text-petroleum-light uppercase block">Avg Temp</span>
-                  <div className="text-xs font-mono text-petroleum-light line-through">
-                    {well.reservoir_temperature.toFixed(1)}°C
-                  </div>
                   <div className="text-lg font-display font-bold text-amber-copper">
                     {simResult.predicted_reservoir_temperature.toFixed(1)}°C
                   </div>
@@ -363,9 +360,6 @@ export const CssOptimizerPage: React.FC<CssOptimizerPageProps> = ({ wellId: prop
                 {/* Viscosity */}
                 <div className="p-3 rounded-xl bg-desert-beige/40 border border-sand-warm/40">
                   <span className="text-[10px] font-mono text-petroleum-light uppercase block">Viscosity</span>
-                  <div className="text-xs font-mono text-petroleum-light line-through">
-                    {well.oil_viscosity.toFixed(0)} cP
-                  </div>
                   <div className="text-lg font-display font-bold text-sage-dark">
                     {simResult.estimated_viscosity.toFixed(0)} cP
                   </div>
@@ -374,9 +368,6 @@ export const CssOptimizerPage: React.FC<CssOptimizerPageProps> = ({ wellId: prop
                 {/* Production */}
                 <div className="p-3 rounded-xl bg-desert-beige/40 border border-sand-warm/40">
                   <span className="text-[10px] font-mono text-petroleum-light uppercase block">Production</span>
-                  <div className="text-xs font-mono text-petroleum-light line-through">
-                    {well.production_rate.toFixed(1)} bpd
-                  </div>
                   <div className="text-lg font-display font-bold text-petroleum-navy">
                     {simResult.predicted_production.toFixed(1)} bpd
                   </div>
