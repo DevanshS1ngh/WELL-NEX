@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <!-- Outer shield / petroleum hex boundary subtle glow -->
+  <rect x="6" y="6" width="108" height="108" rx="24" fill="#163B45" />
+  
+  <!-- Surface Platform line -->
+  <line x1="28" y1="28" x2="92" y2="28" stroke="#D8C5A3" stroke-width="3" stroke-linecap="round" />
+  <circle cx="60" cy="28" r="5" fill="#FAF9F5" stroke="#B77B45" stroke-width="2.5" />
+  
+  <!-- Vertical Wellbore & Casing String -->
+  <line x1="60" y1="28" x2="60" y2="94" stroke="#4F8585" stroke-width="3.5" stroke-dasharray="1 0" />
+  <line x1="52" y1="36" x2="52" y2="88" stroke="#25505C" stroke-width="1.5" />
+  <line x1="68" y1="36" x2="68" y2="88" stroke="#25505C" stroke-width="1.5" />
+
+  <!-- Flow Lines / Thermal Coupling Wave -->
+  <path d="M44 48 C 50 44, 52 54, 60 50 C 68 46, 70 56, 76 52" stroke="#B77B45" stroke-width="2" fill="none" opacity="0.85" />
+  
+  <!-- Sucker Rod Pump (SRP) Node -->
+  <circle cx="60" cy="50" r="4.5" fill="#B77B45" stroke="#FAF9F5" stroke-width="2" />
+
+  <!-- Thermal Injection / Heat Ring (CSS) -->
+  <ellipse cx="60" cy="74" rx="14" ry="5" fill="none" stroke="#D8C5A3" stroke-width="1.8" stroke-dasharray="3 3" />
+  <circle cx="60" cy="74" r="4" fill="#789681" stroke="#FAF9F5" stroke-width="1.5" />
+
+  <!-- Reservoir Formation Base (Jodhpur Sandstone) -->
+  <path d="M34 94 Q 60 88 86 94" stroke="#D8C5A3" stroke-width="3" stroke-linecap="round" />
+  <circle cx="60" cy="94" r="5" fill="#D8C5A3" stroke="#FAF9F5" stroke-width="2" />
+</svg>
