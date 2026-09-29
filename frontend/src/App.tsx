@@ -129,14 +129,14 @@ export const AppContent: React.FC = () => {
               }
             />
 
-            {/* Root Route: If logged in -> Home / Landing Page, If not logged in -> LoginPage */}
+            {/* Root Route: If logged in -> Home, If not logged in -> Login */}
             <Route
               path="/"
               element={
                 currentUser ? (
                   <Navigate to="/home" replace />
                 ) : (
-                  <LoginPage onLoginSuccess={handleLoginSuccess} />
+                  <Navigate to="/login" replace />
                 )
               }
             />
@@ -160,7 +160,13 @@ export const AppContent: React.FC = () => {
             {/* Overview / Landing view when authenticated */}
             <Route
               path="/overview"
-              element={<LandingPage selectedWellId={selectedWellId} />}
+              element={
+                currentUser ? (
+                  <LandingPage selectedWellId={selectedWellId} />
+                ) : (
+                  <Navigate to="/login" replace />
+                )
+              }
             />
 
             {/* Dashboard: The primary destination after login */}
