@@ -93,6 +93,8 @@ export const AppContent: React.FC = () => {
     navigate('/login');
   };
 
+  const isAuthPage = location.pathname === '/login' || location.pathname === '/';
+
   return (
     <>
       {/* 1. Initial Opening Animation (Splash Screen) */}
@@ -104,8 +106,8 @@ export const AppContent: React.FC = () => {
           showSplash ? 'opacity-0 pointer-events-none' : 'opacity-100'
         }`}
       >
-        {/* Render Navbar only when user is logged in and not on login page */}
-        {currentUser && location.pathname !== '/login' && (
+        {/* Render Navbar only when user is logged in and not on login or root page */}
+        {currentUser && !isAuthPage && (
           <Navbar
             selectedWellId={selectedWellId}
             onSelectWell={(id) => setSelectedWellId(id)}
@@ -117,28 +119,16 @@ export const AppContent: React.FC = () => {
 
         <main className="flex-1">
           <Routes>
-            {/* If not logged in and on root or login, render LoginPage */}
+            {/* Login Route: Always renders LoginPage */}
             <Route
               path="/login"
-              element={
-                currentUser ? (
-                  <Navigate to="/home" replace />
-                ) : (
-                  <LoginPage onLoginSuccess={handleLoginSuccess} />
-                )
-              }
+              element={<LoginPage onLoginSuccess={handleLoginSuccess} />}
             />
 
-            {/* Root Route: If logged in -> Home, If not logged in -> Login */}
+            {/* Root Route: Always starts at the Login page */}
             <Route
               path="/"
-              element={
-                currentUser ? (
-                  <Navigate to="/home" replace />
-                ) : (
-                  <Navigate to="/login" replace />
-                )
-              }
+              element={<LoginPage onLoginSuccess={handleLoginSuccess} />}
             />
 
             {/* WELL-NEX HOME / LANDING PAGE: Main Engineering Hub */}
@@ -348,8 +338,8 @@ export const AppContent: React.FC = () => {
           </Routes>
         </main>
 
-        {/* Footer rendered only when logged in and not on login page */}
-        {currentUser && location.pathname !== '/login' && <Footer />}
+        {/* Footer rendered only when logged in and not on login or root page */}
+        {currentUser && !isAuthPage && <Footer />}
       </div>
     </>
   );
